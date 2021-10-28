@@ -1,12 +1,19 @@
+/*
+Anders Nelson
+Geometry.java
+10/28/2021
+*/
 package geometry.gradle;
 import java.util.Scanner;
 
 public class Geometry {
+//main method to display selections
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         while (true) {
             displayPrompt();
             String value = scanner.nextLine();
+            //error checking - try to parse an int from the input, otherwise say "invalid input"
             try{
                 int option = Integer.parseInt(value);
                 if (option == 0) {
@@ -25,16 +32,14 @@ public class Geometry {
                     Sphere s = new Sphere();
                     s.Prompt();
                 } 
+                //if int doesn't match one of the options tell them to try again
                 else {
                     System.out.println("Invalid selection!  Please try again.");
-                    // System.out.println(option);
                 }
             }
             catch(Exception e){
                 System.out.println("Invalid input!  Please try again.");
-                // System.out.println(e.getMessage());
             }
-
         }
     }
 

@@ -1,32 +1,46 @@
+/*
+Anders Nelson
+Cone.java
+10/28/2021
+
+*/
 package geometry.gradle;
 import java.util.Scanner;
 
 public class Cone {
-
+    //calculate the volume based on radius and height
     public float volume(int radius, int height){
         float volume;
+        //compute volume - pi*radius^2*(height/3)
+        //some of these values are doubles - need to convert to float
         volume = (float) Math.PI * (float)(Math.pow(radius, 2)) * (float)(height/3.0);
         return volume;
     }
+    //calculate the cone's surface area based on radius and height
     public float surfaceArea(int radius, int height){
         float surfaceArea;
+
+        //a = pi*r(r+sqrt(h^2+r^2))
         surfaceArea = (float) Math.PI * radius * (radius + (float) Math.sqrt((float)Math.pow((float)height, 2) + (float)Math.pow((float)radius, 2)));
         return surfaceArea;
     }
-
+//calculate the cone's lateral surface area based on radius and height
     public float lateralSurfaceArea(int radius, int height){
 
         float lateralSurfaceArea;
+        //lsa = pi *r(sqrt(h^2+r^2))
         lateralSurfaceArea = (float) Math.PI * radius * (float) Math.sqrt((float)Math.pow((float)height, 2) + (float)Math.pow((float)radius, 2));
         return lateralSurfaceArea;
     }
-
+//calculate the cone's slant based on radius and height
     public float slant(int radius, int height){
 
         float slant;
+        //s = sqrt(r^2+h^2)
         slant = (float)Math.sqrt(Math.pow(height, 2) + Math.pow(radius, 2));
         return slant;
     }
+    //Method to get user input and print the four calculations
     public void Prompt(){
         Scanner s = new Scanner(System.in);
         System.out.println("Cone");
